@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
-import { ProductResponseModel } from 'src/app/models/productResponseModel';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -10,9 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductComponent implements OnInit {
 
-
-
-  products:Product[] = []
+  products:Product [] = []
   dataLoaded = false;
  
   constructor(private productService:ProductService) { }
@@ -23,7 +20,7 @@ export class ProductComponent implements OnInit {
 
   getProducts() {
     this.productService.getProducts().subscribe(response=>{
-      this.products = response.data
+      this.products = response.data;
       this.dataLoaded = true;
     })
   }
